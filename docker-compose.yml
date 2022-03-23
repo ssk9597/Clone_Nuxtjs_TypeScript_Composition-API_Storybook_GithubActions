@@ -1,0 +1,30 @@
+version: '3.7'
+volumes:
+  front_node_modules:
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c "cd ./src && yarn dev"
+    volumes:
+      - ./src:/app/src
+      - front_node_modules:/app/src/node_modules
+    ports:
+      - '$FRONT_PORT:3000'
+    init: true
+    restart: on-failure
+
+  storybook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c "cd ./src && yarn storybook"
+    volumes:
+      - ./src:/app/src
+      - front_node_modules:/app/src/node_modules
+    ports:
+      - '$STORYBOOK_PORT:6006'
+    init: true
+    restart: on-failure
