@@ -1,9 +1,9 @@
-name: deploy-develop
+name: deploy-master
 
 on:
   pull_request:
     branches:
-      - develop
+      - master
     types: [closed]
 
 jobs:
