@@ -16,7 +16,9 @@ export default defineComponent({
     const users = ref({});
 
     useFetch(async () => {
-      const res = await axios.get('https://jsonplaceholder.typicode.com/users/1');
+      const res = await axios.get(
+        process.env.API_URL || 'https://jsonplaceholder.typicode.com/users/1'
+      );
       users.value = res.data;
     });
 
