@@ -12,8 +12,7 @@
 
 ## storybook URL
 
-http://nym-storybook.s3-website-ap-northeast-1.amazonaws.com/<ブランチ名>/index.html
-http://components-storybook-ryo9597.s3-website-ap-northeast-1.amazonaws.com/feature/create_github_actions/index.html
+http://<バケット名>.s3-website-ap-northeast-1.amazonaws.com/<ブランチ名>/index.html
 
 ## 不明点
 

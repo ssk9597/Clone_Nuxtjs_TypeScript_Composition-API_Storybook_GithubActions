@@ -1,5 +1,8 @@
 import { NuxtConfig } from '@nuxt/types';
 
+// Font Awesome
+import * as FontAwesome from './libs/fontawesome';
+
 const config: NuxtConfig = {
   // env
   publicRuntimeConfig: {
@@ -20,16 +23,22 @@ const config: NuxtConfig = {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/fontawesome'],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   storybook: {
     port: 6006,
+
+    parameters: {
+      controls: {
+        expanded: true,
+      },
+    },
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -37,7 +46,16 @@ const config: NuxtConfig = {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     '@nuxtjs/composition-api',
+    ['@nuxtjs/fontawesome', { component: 'fontAwesome', suffix: true }],
   ],
+
+  fontawesome: {
+    icons: {
+      solid: FontAwesome.solid,
+      regular: FontAwesome.regular,
+      brands: FontAwesome.brands,
+    },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
