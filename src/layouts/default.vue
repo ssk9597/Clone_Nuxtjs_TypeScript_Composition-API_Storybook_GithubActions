@@ -9,6 +9,8 @@
 body {
   line-height: $base_line_height;
   color: $base_font_colors;
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+    sans-serif;
 
   & h1,
   h2,
